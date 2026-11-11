@@ -1,0 +1,30 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { keccak256, ZeroAddress } from "ethers";
+import { fileKey, encryptFile, decryptFile } from "../lib/stepfund/private-file";
+import { privacyContext, privateCommitment, randomSalt, validateAdvanced, FIELD } from "../lib/stepfund/privacy";
+test("private-file encryption preserves bytes and names, authenticates the key and binds ciphertext hash", async () => {
+  const file = new File(["私密成果\n90/100"], "验收.txt", { type: "text/plain" });
+  const secret = fileKey(), encrypted = await encryptFile(file, secret);
+  const bytes = new Uint8Array(await encrypted.blob.arrayBuffer());
+  assert.equal(encrypted.digest, keccak256(bytes));
+  assert.equal(new TextDecoder().decode(bytes).includes("90/100"), false);
+  const result = await decryptFile(bytes, secret, encrypted.digest);
+  assert.equal(result.name, file.name); assert.equal(new TextDecoder().decode(result.bytes), await file.text());
+  await assert.rejects(decryptFile(bytes, fileKey(), encrypted.digest), /privateFileKey/);
+  const bad = bytes.slice(); bad[bad.length - 1] ^= 1;
+  await assert.rejects(decryptFile(bad, secret, encrypted.digest), /privateFileHash/);
+  await assert.rejects(decryptFile(bad, secret, keccak256(bad)), /privateFileKey/);
+});
+test("privacy commitment domain separates chain, campaign, milestone and file; validates bounded integers", () => {
+  const addr = "0x1000000000000000000000000000000000000001", digest = "0x" + "12".repeat(32);
+  const base = privacyContext(31337, addr, 0, digest);
+  const salt = randomSalt(); assert.ok(BigInt(salt) < FIELD);
+  const original = privateCommitment("90", salt, base);
+  for (const domain of [privacyContext(11155111, addr, 0, digest), privacyContext(31337, "0x2000000000000000000000000000000000000002", 0, digest), privacyContext(31337, addr, 1, digest), privacyContext(31337, addr, 0, "0x" + "13".repeat(32))]) assert.notEqual(privateCommitment("90", salt, domain), original);
+  for (const invalid of ["-1", "1.5", "18446744073709551616", "1e2"]) assert.throws(() => privateCommitment(invalid, salt, base));
+  const config = { vault: ZeroAddress, verifier: addr, assessor: "0x3000000000000000000000000000000000000003", minimums: ["80"], maximums: ["100"] };
+  assert.doesNotThrow(() => validateAdvanced(config, 1, addr));
+  assert.throws(() => validateAdvanced({ ...config, assessor: addr }, 1, addr));
+  assert.throws(() => validateAdvanced({ ...config, minimums: ["101"] }, 1, addr));
+});

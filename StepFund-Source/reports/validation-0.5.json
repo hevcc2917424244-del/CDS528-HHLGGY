@@ -1,0 +1,99 @@
+{
+  "version": "0.5.0",
+  "contractProtocol": 2,
+  "timestamp": "2026-10-02T07:23:22.688794+00:00",
+  "contracts": {
+    "solidity": "0.8.30",
+    "hardhatTests": 48,
+    "coverage": {
+      "statements": {
+        "covered": 131,
+        "total": 131,
+        "percent": 100.0
+      },
+      "functions": {
+        "covered": 28,
+        "total": 28,
+        "percent": 100.0
+      },
+      "branches": {
+        "covered": 158,
+        "total": 194,
+        "percent": 81.44
+      }
+    },
+    "lineCoveragePercent": 100,
+    "sourceSHA256": {
+      "MilestoneCampaign.sol": "15636b0bdcff993c25ac0a08d3edd84fc3d51a3a250322dc9a9adef890e15d35",
+      "StepFundFactory.sol": "97395ba7b5ae95d452e8d099b62072321cd3bea55d04b127c57af65f0326e721",
+      "TestUSD.sol": "e8946c993fea14c455f85d505fd319fce2d5884a4ab0e957a0e20bce33ddbfca"
+    }
+  },
+  "staticAnalysis": {
+    "tool": "Slither 0.11.6",
+    "high": 0,
+    "medium": 0,
+    "low": 9,
+    "acceptedLowFindings": "Deadline/timestamp checks; see SECURITY.md",
+    "report": "reports/security/slither-0.5-reviewed.json"
+  },
+  "applicationTests": {
+    "passed": 37,
+    "typecheck": "passed"
+  },
+  "freshSourceReproduction": {
+    "method": "Extracted source ZIP; fresh npm ci with the npm mirror, no reused node_modules, no generated Next env/types or incremental type cache required. Final UI summary changes copied into this clean tree before revalidation.",
+    "dependencyInstall": "passed",
+    "solidityCompile": "passed",
+    "freshArtifactBundleComparison": "passed",
+    "hardhatTests": 48,
+    "applicationTests": 37,
+    "typecheck": "passed",
+    "portableBuild": "passed",
+    "platform": "Windows x64 / Node 24.15.0"
+  },
+  "browser": {
+    "baseline": {
+      "passed": 9,
+      "report": "reports/browser/results.json"
+    },
+    "evidenceSharing": {
+      "passed": 10,
+      "report": "reports/browser/evidence-sharing.json"
+    },
+    "governanceIPFS": {
+      "passed": 6,
+      "development": "passed",
+      "portable": "passed on 127.0.0.1:5292",
+      "realLocalTransactions": 1,
+      "gatewayResponses": "mocked; mismatched hashes and service failures exercised",
+      "report": "reports/browser/governance-ipfs.json"
+    }
+  },
+  "builds": {
+    "vinextProduction": "passed",
+    "portableProduction": "passed",
+    "warnings": [
+      "Main frontend chunk exceeds 500 kB; wallet and storage SDKs are loaded on demand.",
+      "Vinext dynamic-route classification notice."
+    ]
+  },
+  "packaging": {
+    "launcher": "reports/launcher-package-0.5.json",
+    "windows": "bundled Node; ZIP CRC checked",
+    "source": "Solidity, Hardhat tests, application source, documentation and GitHub Actions workflow included"
+  },
+  "publication": {
+    "github": "Not published; user explicitly requested local source delivery only.",
+    "hostedCI": "Not run; workflow prepared and equivalent checks run locally."
+  },
+  "limitations": [
+    "Authenticated Storacha account upload has not been live-tested; a provisioned user-owned space is required.",
+    "IPFS inline preview supports raster images and escaped text; PDF/Office and active formats use download or external viewing.",
+    "No public Sepolia deployment or source verification has been completed.",
+    "Physical mobile wallet authorization/signature remains unverified by local adapter tests.",
+    "DeFi lending and ZK acceptance are documented proposals, not implemented features.",
+    "Existing immutable v1 contracts are not upgraded or migrated; previous release retained in outputs/Previous-0.4.",
+    "No independent security audit; free test-token faucet remains Sybil-vulnerable and contribution-weighted voting permits collusion."
+  ]
+}

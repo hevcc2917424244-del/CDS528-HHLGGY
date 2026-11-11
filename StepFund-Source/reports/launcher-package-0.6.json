@@ -1,0 +1,21 @@
+{
+  "version": "0.6.0",
+  "status": "passed",
+  "checks": [
+    "ZIP extracts correctly",
+    "CMD launcher works from a path containing spaces",
+    "Bundled Node starts without npm",
+    "Compiled app and JS served successfully",
+    "All production contract deployment assets are available",
+    "Bundled v3 source-verification input is available",
+    "Versioned startup status and logs work",
+    "Log-folder launcher included",
+    "ZK worker, wasm and zkey bytes and MIME types match source",
+    "Corresponding source, build scripts and operation docs included",
+    "Real browser proof/encryption/treasury workflow passes against extracted portable server"
+  ],
+  "launcherUsesInstalledNode": false,
+  "browserTestUsesInstalledNode": true,
+  "openedUserBrowser": false,
+  "advancedSmokeReport": "reports/browser/advanced.json"
+}

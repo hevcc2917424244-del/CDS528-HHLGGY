@@ -1,0 +1,10 @@
+{
+  "network": 31337,
+  "method": "Local EIP-1193 test adapter; physical MetaMask signing remains untested",
+  "checks": [
+    "Rejected second deployment persists the token; reload resumes only the factory, with no duplicate token deployment",
+    "A broadcast transaction survives page reload and recovers its mined receipt"
+  ],
+  "pageErrors": [],
+  "timestamp": "2026-09-30T05:54:15.100Z"
+}

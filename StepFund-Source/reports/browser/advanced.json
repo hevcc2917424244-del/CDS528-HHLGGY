@@ -1,0 +1,14 @@
+{
+  "base": "http://127.0.0.1:53592",
+  "chain": 31337,
+  "method": "Local Ethereum + injected test adapter; example evidence URI, not a live upload",
+  "checks": [
+    "Creates an immutable vault + factory-pinned ZK campaign through the bilingual UI",
+    "Deposits real project principal, redeems before activation and exposes externally funded yield",
+    "Encrypts actual evidence bytes with AES-GCM, hash-checks ciphertext and previews the decrypted file",
+    "Browser worker creates a real PLONK proof; a different assessor attests and the chain verifies it before voting",
+    "Advanced project renders in English and Chinese without 390px horizontal overflow"
+  ],
+  "errors": [],
+  "at": "2026-10-03T13:20:30.532Z"
+}

@@ -1,0 +1,72 @@
+
+> stepfund@0.1.0 test:coverage
+> hardhat coverage
+
+
+Version
+=======
+> solidity-coverage: v0.8.17
+
+Instrumenting for coverage...
+=============================
+
+> MilestoneCampaign.sol
+> StepFundFactory.sol
+> TestUSD.sol
+
+Compilation:
+============
+
+Compiled 18 Solidity files successfully (evm target: paris).
+
+Network Info
+============
+> HardhatEVM: v2.28.0
+> network:    hardhat
+
+
+
+  StepFund escrow and lifecycle
+    √ registers immutable creator, token, budgets, goal and deadlines
+    √ uses a six-decimal faucet with a per-address cooldown
+    √ escrows exact contributions and counts distinct contributors
+    √ rejects zero, over-goal and unapproved contributions
+    √ cannot withdraw escrow before an approved milestone
+    √ rejects early finalization and closes contributions at the deadline
+    √ allows anyone to activate a fully funded campaign before its deadline
+    √ refunds unsuccessful funding without creator cooperation
+    √ finalizes an empty campaign safely
+    √ requires creator evidence with a valid URI scheme and nonzero digest
+    √ does not accept evidence before activation
+    √ fixes voting power to original contributions and blocks duplicate votes
+    √ does not settle early or accept votes after voting closes
+    √ approves at exactly 60% of total stake and uses pull payments (38ms)
+    √ does not pass 40% yes merely because all cast votes favor approval
+    √ opens refunds if nobody votes
+    √ refunds only unreleased money after a later rejection (55ms)
+    √ blocks repeated refunds and non-contributor claims
+    √ expires missing evidence permissionlessly, but never expires an open vote
+    √ lets a vote finish even when its submission deadline has passed
+    √ completes all milestones, allowing a fresh vote at each stage (67ms)
+    √ restricts pause to creator and fundraising, preserving deadline/refund liveness
+    √ keeps different campaigns and their treasuries isolated
+    √ rejects invalid deadlines, lengths, empty budgets and excessive goals (52ms)
+    √ assigns rounding dust to the last claimant without leaving funds stuck (75ms)
+    √ direct token donations cannot change voting power or campaign accounting
+    √ conserves contributor balances for varied failed-funding allocations (116ms)
+
+
+  27 passing (2s)
+
+------------------------|----------|----------|----------|----------|----------------|
+File                    |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------------|----------|----------|----------|----------|----------------|
+ contracts\             |      100 |    76.06 |      100 |      100 |                |
+  MilestoneCampaign.sol |      100 |    76.09 |      100 |      100 |                |
+  StepFundFactory.sol   |      100 |       50 |      100 |      100 |                |
+  TestUSD.sol           |      100 |      100 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+All files               |      100 |    76.06 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+
+> Istanbul reports written to ./coverage/ and ./coverage.json

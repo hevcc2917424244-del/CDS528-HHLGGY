@@ -1,0 +1,33 @@
+# 依赖与构建产物
+node_modules/
+.next/
+out/
+dist/
+.hardhat-cache/
+artifacts/
+portable-dist/
+coverage/
+coverage.json
+*.tsbuildinfo
+__pycache__/
+
+# zk 生成物（build/ 里的源码插件需要保留，只排除生成物）
+build/zk/
+build/zk-check/
+
+# 环境变量与密钥
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+__MACOSX/
+.idea/
+.vscode/
+
+# 请上传源码目录，不要再放打包好的压缩包
+*.zip

@@ -1,0 +1,73 @@
+name: Solidity and application checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Tests (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24.15.0"
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Compile Solidity with the pinned local compiler
+        run: npm run compile
+      - name: Check circuit source and shipped proving assets
+        run: npm run zk:check
+      - name: Detect stale ABI, bytecode or source-verification input
+        run: node scripts/check-contract-bundle.cjs
+      - name: Run the complete Hardhat test suite
+        run: npm test
+      - name: Run application logic and integrity tests
+        run: npm run test:domain
+      - name: Check TypeScript
+        run: npm run typecheck
+      - name: Build the portable application
+        run: npm run build:portable
+      - name: Check the recipient release boundary
+        run: npm run release:check
+
+  coverage:
+    name: Solidity coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24.15.0"
+          cache: npm
+      - run: npm ci
+      - run: npm run test:coverage
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: solidity-coverage
+          path: |
+            coverage/
+            coverage.json
+          if-no-files-found: error
+          retention-days: 14

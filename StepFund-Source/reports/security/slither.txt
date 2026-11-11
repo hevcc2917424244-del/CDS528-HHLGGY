@@ -1,0 +1,43 @@
+
+Detector: incorrect-equality
+MilestoneCampaign.settleStage() (contracts/MilestoneCampaign.sol#150-167) uses a dangerous strict equality:
+	- currentStage == stages.length (contracts/MilestoneCampaign.sol#161)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: uninitialized-local
+MilestoneCampaign.constructor(address,address,string,string,uint8,uint256,uint256,string[],uint256[],uint256[]).sum (contracts/MilestoneCampaign.sol#84) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+
+Detector: timestamp
+MilestoneCampaign.constructor(address,address,string,string,uint8,uint256,uint256,string[],uint256[],uint256[]) (contracts/MilestoneCampaign.sol#75-96) uses timestamp for comparisons
+	Dangerous comparisons:
+	- token_ == address(0) || creator_ == address(0) || bytes(title_).length == 0 || bytes(title_).length > 120 || bytes(summary_).length == 0 || bytes(summary_).length > 1200 || category_ > 2 || fundingEnds_ <= block.timestamp || fundingEnds_ > block.timestamp + 7776000 || votingPeriod_ < 3600 || votingPeriod_ > 1209600 || names_.length == 0 || names_.length > 8 || names_.length != budgets_.length || names_.length != dues_.length (contracts/MilestoneCampaign.sol#79-83)
+	- bytes(names_[i]).length == 0 || bytes(names_[i]).length > 120 || budgets_[i] == 0 || dues_[i] < lastDue + votingPeriod_ + 3600 || dues_[i] > block.timestamp + 63072000 (contracts/MilestoneCampaign.sol#87-88)
+MilestoneCampaign.contribute(uint256) (contracts/MilestoneCampaign.sol#101-112) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp >= fundingEnds (contracts/MilestoneCampaign.sol#103)
+MilestoneCampaign.finalizeFunding() (contracts/MilestoneCampaign.sol#115-121) uses timestamp for comparisons
+	Dangerous comparisons:
+	- totalRaised < goal && block.timestamp < fundingEnds (contracts/MilestoneCampaign.sol#117)
+MilestoneCampaign.submitEvidence(string,bytes32) (contracts/MilestoneCampaign.sol#123-135) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp >= s.due (contracts/MilestoneCampaign.sol#128)
+MilestoneCampaign.vote(bool) (contracts/MilestoneCampaign.sol#137-148) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp >= s.votingEnds (contracts/MilestoneCampaign.sol#141)
+MilestoneCampaign.settleStage() (contracts/MilestoneCampaign.sol#150-167) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < s.votingEnds (contracts/MilestoneCampaign.sol#154)
+	- currentStage == stages.length (contracts/MilestoneCampaign.sol#161)
+MilestoneCampaign.expireStage() (contracts/MilestoneCampaign.sol#169-176) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < s.due (contracts/MilestoneCampaign.sol#173)
+TestUSD.faucet() (contracts/TestUSD.sol#13-17) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < nextFaucet[msg.sender] (contracts/TestUSD.sol#14)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+Detector: immutable-states
+MilestoneCampaign.category (contracts/MilestoneCampaign.sol#36) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+. analyzed (18 contracts with 102 detectors), 11 result(s) found

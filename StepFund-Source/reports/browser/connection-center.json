@@ -1,0 +1,17 @@
+{
+  "base": "http://127.0.0.1:5282",
+  "checks": [
+    "Connection center works without an installed wallet; tUSD claim gated",
+    "Connection import rejects mainnet and accepts public Sepolia config",
+    "Bundled real compiler input exports; unconnected verification gated",
+    "Real MetaMask Connect SDK produces a phone pairing QR without a desktop wallet",
+    "Phone pairing cancellation clears QR and allows retry",
+    "Chinese connection center and mobile layout have no horizontal overflow"
+  ],
+  "pageErrors": [],
+  "limitations": [
+    "Phone scan, account consent and transaction signatures still require a physical user wallet",
+    "No Sepolia contracts deployed during this QA run"
+  ],
+  "timestamp": "2026-09-30T05:53:45.592Z"
+}

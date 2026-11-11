@@ -1,0 +1,17 @@
+{
+  "version": "0.5.0",
+  "passed": 6,
+  "checks": [
+    "Real v2 chain loads bond balances and a delegate with no personal stake can vote",
+    "Mocked gateway bytes independently match the real chain hash; active-looking text stays escaped",
+    "Tampering and gateway outages clear the verified preview and report distinct failures",
+    "The UI submits a real delegated vote once; 60% yes alone is shown below combined requirements",
+    "Storage SDK lazy-loads in the browser and rejects invalid login without sending email",
+    "Bilingual bond/IPFS controls render without mobile horizontal overflow"
+  ],
+  "pageErrors": [],
+  "realLocalTransactions": 1,
+  "gateway": "mocked",
+  "authenticatedStorageUpload": "not exercised; user account/space required",
+  "timestamp": "2026-10-02T07:21:51.125Z"
+}

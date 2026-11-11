@@ -1,0 +1,41 @@
+{
+  "version": "0.3.0",
+  "timestamp": "2026-09-30T05:56:31.883830+00:00",
+  "contracts": {
+    "passed": 30,
+    "seededRandomizedScenarios": 16,
+    "coverage": {
+      "statements": 100,
+      "lines": 100,
+      "functions": 100,
+      "branches": 76.06
+    },
+    "solidityChanged": false,
+    "staticAnalysis": "Previous clean-build Slither results apply to unchanged contracts: 0 high, 0 medium, 8 timestamp low findings."
+  },
+  "domainTests": {
+    "passed": 20
+  },
+  "builds": {
+    "typecheck": "passed",
+    "vinextProduction": "passed",
+    "portableProduction": "passed",
+    "warnings": [
+      "Bundle chunks over 500 KB; wallet SDK is lazy-loaded."
+    ]
+  },
+  "browserChecks": [
+    "reports/browser/results.json",
+    "reports/browser/optimizations.json",
+    "reports/browser/wallet-recovery.json",
+    "reports/browser/wallet-deployment.json",
+    "reports/browser/wallet-guards.json",
+    "reports/browser/connection-center.json"
+  ],
+  "launcherChecks": "reports/launcher.json",
+  "limitations": [
+    "Local EIP-1193 adapters are not physical MetaMask testing.",
+    "No actual Sepolia deployment or public source verification was performed.",
+    "Attachments are browser-local; downloading a manifest does not download file bodies."
+  ]
+}

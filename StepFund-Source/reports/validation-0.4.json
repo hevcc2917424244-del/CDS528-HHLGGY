@@ -1,0 +1,44 @@
+{
+  "version": "0.4.0",
+  "timestamp": "2026-09-30T09:34:03.354223+00:00",
+  "contracts": {
+    "passed": 30,
+    "solidityChanged": false,
+    "coverageAndStaticAnalysis": "Unchanged contract baseline recorded in reports/validation-0.3.json; coverage and Slither were not rerun for this UI/storage change."
+  },
+  "domainTests": {
+    "passed": 28,
+    "newEvidenceBundleTests": 8
+  },
+  "builds": {
+    "typecheck": "passed",
+    "vinextProduction": "passed",
+    "portableProduction": "passed",
+    "warnings": [
+      "Existing app chunks exceed 500 kB; wallet SDK and evidence tools are lazy-loaded.",
+      "Vinext reports that route classification is not yet supported for all dynamic API usage."
+    ]
+  },
+  "browserChecks": {
+    "portableEvidenceSharing": {
+      "passed": 10,
+      "report": "reports/browser/evidence-sharing.json",
+      "pageErrors": 0,
+      "walletTransactionsRequested": 0
+    },
+    "portableFeatureRegression": {
+      "passed": 8,
+      "report": "reports/browser/optimizations.json",
+      "pageErrors": 0
+    },
+    "developmentEvidenceSharing": "Nine original checks passed on port 5173 before adding the large-file cancellation check; final ten-check run used compiled portable assets."
+  },
+  "launcherPackage": "reports/launcher-package-0.4.json",
+  "limitations": [
+    "Local-chain browser wallet adapters are not physical MetaMask consent/signature testing.",
+    "No Sepolia deployment, public source verification or public GitHub publication was performed.",
+    "Evidence ZIPs contain actual files but do not authenticate senders, publish files, synchronize browsers or send transactions.",
+    "Share original exported ZIPs without recompressing; recipients must open the matching project.",
+    "Hash consistency does not prove the truth of project claims."
+  ]
+}

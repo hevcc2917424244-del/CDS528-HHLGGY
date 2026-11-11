@@ -1,0 +1,22 @@
+{
+  "version": "0.5.0",
+  "base": "http://127.0.0.1:5173",
+  "network": 31337,
+  "method": "Two isolated browser profiles with real local-chain contracts and read-only EIP-1193 adapters",
+  "checks": [
+    "Exported ZIP contains the real files, milestone mapping and exact hash manifest",
+    "Inspection checks chain commitments and cancellation writes nothing",
+    "A separate browser imports exact bytes; primary hash matches the real local contract and text never executes",
+    "Repeated imports skip identical files without duplicating storage",
+    "A tampered package is rejected without changing existing attachments",
+    "Imported evidence persists after reload",
+    "English and Chinese review screens fit desktop and mobile",
+    "A 20 MB package can be cancelled while processing without saving files",
+    "A real 100 MB library quota failure rolls back the entire import",
+    "Sharing and importing requested no wallet transactions"
+  ],
+  "passed": 10,
+  "pageErrors": [],
+  "browserTransactions": 0,
+  "timestamp": "2026-10-02T07:10:56.932Z"
+}

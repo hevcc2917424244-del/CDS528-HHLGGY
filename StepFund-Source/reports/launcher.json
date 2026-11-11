@@ -1,0 +1,11 @@
+{
+  "version": "0.3.0",
+  "checks": [
+    "Occupied port falls back automatically and is persisted",
+    "Same-folder second launch reuses existing instance",
+    "Status and startup logs are accessible",
+    "Foreign Host and Origin rejected",
+    "Encoded traversal cannot read outside www"
+  ],
+  "timestamp": "2026-09-30T05:49:18.338Z"
+}

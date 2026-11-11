@@ -1,0 +1,25 @@
+{
+  "protocol": "plonk",
+  "curve": "bn128",
+  "compiler": "circom 2.2.3 (circom2 0.2.23)",
+  "snarkjs": "0.7.6",
+  "publicSignals": [
+    "commitment",
+    "minimum",
+    "maximum",
+    "context"
+  ],
+  "transcript": {
+    "url": "https://circom.info/powersOfTau28_hez_final_12.ptau",
+    "blake2b512": "ded2694169b7b08e898f736d5de95af87c3f1a64594013351b1a796dbee393bd825f88f9468c84505ddd11eb0b1465ac9b43b9064aa8ec97f2b73e04758b8a4a",
+    "source": "https://github.com/iden3/snarkjs#7-prepare-phase-2"
+  },
+  "files": {
+    "circuits/Acceptance.circom": "827dea2566c12a55e418d933ea25748cc470a7d15bce27c78de686d2a261922c",
+    "contracts/AcceptanceVerifier.sol": "70be59d25bfb0d3c1f2beb05df188f11efd56b2b9356ca63104c51d5491e53d3",
+    "public/zk/acceptance.zkey": "ecd5590d6ff94b4c1552a0e923e85a9db7d5b9be8a1fa022e4d3219b6f261778",
+    "public/zk/acceptance.wasm": "bb86ded15d6057010c57747b3f4b68977f6061b21a459fa38467ba3b9f658530",
+    "public/zk/verification-key.json": "432e27674308cefd7600a8742938f7941e25682b154c3285aefb10a53ebd2fea",
+    "public/zk/snarkjs.min.js": "3f61bbd9ac0a10173902eaef65b510fa4e9a2c057f759c7f18a6d0446b20fd06"
+  }
+}

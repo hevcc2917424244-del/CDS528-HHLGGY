@@ -1,0 +1,19 @@
+{
+  "base": "http://127.0.0.1:5294",
+  "checks": [
+    "explore-en-desktop",
+    "project-en-desktop",
+    "finance-en-desktop",
+    "create-en-desktop",
+    "connection-en-desktop",
+    "explore-zh-desktop",
+    "explore-zh-tablet",
+    "explore-zh-mobile",
+    "project-zh-mobile",
+    "explore-en-small-mobile",
+    "navigation-en-mobile",
+    "settings-en-mobile"
+  ],
+  "pageErrors": [],
+  "timestamp": "2026-10-03T13:02:53.839Z"
+}

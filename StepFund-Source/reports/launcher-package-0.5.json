@@ -1,0 +1,16 @@
+{
+  "version": "0.5.0",
+  "status": "passed",
+  "checks": [
+    "ZIP extracts correctly",
+    "CMD launcher works from a path containing spaces",
+    "Bundled Node starts without npm",
+    "Compiled app and JS served successfully",
+    "Contract deployment ABI and bytecode are available",
+    "Bundled source-verification input is available",
+    "Versioned startup status and logs work",
+    "Log-folder launcher included"
+  ],
+  "usedInstalledNode": false,
+  "openedUserBrowser": false
+}

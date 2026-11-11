@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Financial chart has seven non-overlapping allocations including treasury and loss, and all three project ledgers",
+    "Refund and vote tasks disappear after successful actions",
+    "Attachment saves in IndexedDB, hashes exact bytes and previews text without executing it",
+    "Downloaded file and attachment manifest preserve the digest",
+    "Saved attachments survive reload and remain scoped to their project and milestone",
+    "Creator account gets evidence and withdrawal tasks with appropriate deadlines",
+    "Saved primary attachment can be committed and displays matching digest status",
+    "Chinese labels and mobile layouts have no document-level horizontal overflow"
+  ],
+  "passed": 8,
+  "pageErrors": [],
+  "timestamp": "2026-10-03T13:02:50.395Z"
+}

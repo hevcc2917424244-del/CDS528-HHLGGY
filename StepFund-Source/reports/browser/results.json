@@ -1,0 +1,18 @@
+{
+  "base": "http://127.0.0.1:5292",
+  "passed": 9,
+  "checks": [
+    "WebMCP handler schemas: valid read and invalid navigation (shim only)",
+    "Search empty state and recovery",
+    "Approval vote and duplicate-vote prevention",
+    "Time advancement and stage settlement",
+    "Unreleased-fund refund",
+    "Validated project creation",
+    "Funding, activation, evidence file hashing and verification",
+    "Chinese translation and reload persistence",
+    "Mobile navigation and no horizontal overflow"
+  ],
+  "pageErrors": [],
+  "nativeWebMCP": "Unavailable in this browser; handler shim tested separately",
+  "timestamp": "2026-10-03T12:16:15.995Z"
+}

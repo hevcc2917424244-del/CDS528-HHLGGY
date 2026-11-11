@@ -1,0 +1,12 @@
+{
+  "method": "Isolated local RPC adapter and mocked Sourcify responses; no real Sepolia verification claimed",
+  "checks": [
+    "Sharing exports only public deployment identifiers",
+    "Submitting source and pending jobs never display verified",
+    "Completed nonmatching source job displays failure",
+    "Service outage reports uncertainty"
+  ],
+  "pageErrors": [],
+  "publicTransactions": 0,
+  "timestamp": "2026-09-30T05:29:58.419Z"
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.6.0",
+  "scan": "slither-0.6.0-clean.json",
+  "cleanNonInstrumentedBuild": true,
+  "rawCounts": {
+    "High": 18,
+    "Medium": 3,
+    "Low": 16,
+    "Informational": 106,
+    "Optimization": 1
+  },
+  "detectorCounts": {
+    "incorrect-return": 14,
+    "reentrancy-balance": 4,
+    "incorrect-equality": 2,
+    "reentrancy-no-eth": 1,
+    "reentrancy-benign": 3,
+    "timestamp": 13,
+    "assembly": 22,
+    "dead-code": 1,
+    "solc-version": 1,
+    "missing-inheritance": 1,
+    "naming-convention": 78,
+    "unused-state": 3,
+    "cache-array-length": 1
+  },
+  "failMediumPassed": false,
+  "review": "review-0.6.md",
+  "independentAudit": false
+}

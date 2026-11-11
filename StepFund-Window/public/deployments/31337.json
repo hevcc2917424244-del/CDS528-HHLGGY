@@ -1,0 +1,13 @@
+{
+  "chainId": 31337,
+  "token": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "factory": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "verifier": "0xCafac3dD18aC6c6e92c921884f9E4176737C052c",
+  "researchVault": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+  "protocolVersion": 3,
+  "assetSymbol": "tUSD",
+  "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "blockNumber": 3,
+  "deployedAt": "2026-11-05T08:28:42.253Z",
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang"
+}

@@ -1,0 +1,14 @@
+{
+  "sourcifyRead": {
+    "httpStatus": 404,
+    "accessibleFromBrowser": true,
+    "verificationMatch": null
+  },
+  "sepoliaRPC": {
+    "httpStatus": 200,
+    "accessibleFromBrowser": true,
+    "chainId": "0xaa36a7"
+  },
+  "verificationSubmitted": false,
+  "timestamp": "2026-09-30T05:27:55.401Z"
+}

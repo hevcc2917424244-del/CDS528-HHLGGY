@@ -1,0 +1,22 @@
+{
+  "statements": {
+    "covered": 212,
+    "total": 213,
+    "percent": 99.53
+  },
+  "functions": {
+    "covered": 49,
+    "total": 49,
+    "percent": 100.0
+  },
+  "branches": {
+    "covered": 262,
+    "total": 370,
+    "percent": 70.81
+  },
+  "lines": {
+    "covered": 208,
+    "total": 208,
+    "percent": 100.0
+  }
+}

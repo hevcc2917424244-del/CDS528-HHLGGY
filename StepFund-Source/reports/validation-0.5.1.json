@@ -1,0 +1,82 @@
+{
+  "version": "0.5.1",
+  "scope": "Visual presentation and local decorative assets; immutable contract protocol v2 and browser storage keys unchanged.",
+  "timestamp": "2026-10-03T12:17:41.738062+00:00",
+  "typecheck": "passed",
+  "applicationTests": 37,
+  "browserRegression": {
+    "development": 9,
+    "portable": 9,
+    "report": "reports/browser/results.json"
+  },
+  "visualReview": {
+    "passed": 12,
+    "report": "reports/design/visual-review.json",
+    "externalHTTPRequests": "blocked",
+    "widths": [
+      1440,
+      768,
+      390,
+      360
+    ],
+    "languages": [
+      "en",
+      "zh-CN"
+    ],
+    "images": "All checked images loaded from the local app",
+    "pageErrors": 0
+  },
+  "builds": {
+    "vinext": "passed",
+    "portable": "passed",
+    "warnings": [
+      "Existing frontend chunk-size warning",
+      "Vinext route static-classification notice"
+    ]
+  },
+  "contractValidation": {
+    "rerunThisRelease": false,
+    "reason": "No Solidity or business logic changed; see reports/validation-0.5.json for the 48-test contract baseline."
+  },
+  "artwork": {
+    "generator": "Built-in image_gen.imagegen",
+    "prompts": "reports/design/asset-prompts.json",
+    "assets": {
+      "action-arrow.svg": {
+        "bytes": 207,
+        "sha256": "07727bab60b146023cf36fffdabe18c38e181fb2b43cd27312dbba3850aeafd5"
+      },
+      "button-engraving.svg": {
+        "bytes": 224,
+        "sha256": "c163c27d383428c8613a190f3a2e6284bf576568ce30810b41f83bb54a41c148"
+      },
+      "community-cover.png": {
+        "bytes": 3036084,
+        "sha256": "baa0ae2fe92e9acf1027859996fb33749c6bcc8c6098a5a326034995066f0e09"
+      },
+      "education-cover.png": {
+        "bytes": 2791376,
+        "sha256": "04ad149f779373ab00309fe731f7578c6b79ef46e4f1904d51d22bb86f170fdc"
+      },
+      "ledger-frame.svg": {
+        "bytes": 378,
+        "sha256": "aa156087dfff91f845802670de7434fb214f8d9bac0b149947aa2f4ded62eaf7"
+      },
+      "progress-print.svg": {
+        "bytes": 1469,
+        "sha256": "bde10da09044a5e24804dfbe1bd9e2945cb7507f725be280f48bc5b5f9c026b0"
+      },
+      "step-mark.svg": {
+        "bytes": 258,
+        "sha256": "d57c5714603398191aa6dc50e47db83c3709a73ce7ad0e152323b5f9152895a3"
+      },
+      "technology-cover.png": {
+        "bytes": 2697669,
+        "sha256": "2b499935fc5d0bfe95529d01d0db85c8b0345ec94b7eca321ba66ba6d2bbb227"
+      }
+    }
+  },
+  "limitations": [
+    "Sepolia deployment, real mobile wallet signatures and authenticated storage uploads remain unverified; see validation-0.5.json."
+  ]
+}
